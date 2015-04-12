@@ -1,4 +1,4 @@
-"DateTime"|"Global_active_power"|"Global_reactive_power"|"Voltage"|"Global_intensity"|"Sub_metering_1"|"Sub_metering_2"|"Sub_metering_3"
+"DateTime"|"GlobalActivePower"|"GlobalReactivePower"|"Voltage"|"GlobalIntensity"|"SubMetering1"|"SubMetering2"|"SubMetering3"
 2007-02-01 00:00:00|0.326|0.128|243.15|1.4|0|0|0
 2007-02-01 00:01:00|0.326|0.13|243.32|1.4|0|0|0
 2007-02-01 00:02:00|0.324|0.132|243.51|1.4|0|0|0

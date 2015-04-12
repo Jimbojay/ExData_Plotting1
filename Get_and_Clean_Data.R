@@ -22,10 +22,10 @@ if (!file.exists('PA Source Data/household_power_consumption.txt')) {
         household.power.consumption<-household.power.consumption[household.power.consumption$Date=='1/2/2007' | household.power.consumption$Date=='2/2/2007',]
         
         # Add variable headers and configure date and time variables
-        cols<-c('Date','Time','Global_active_power','Global_reactive_power','Voltage','Global_intensity',
-                'Sub_metering_1','Sub_metering_2','Sub_metering_3')
+        cols<-c('Date','Time','GlobalActivePower','GlobalReactivePower','Voltage','GlobalIntensity',
+                'SubMetering1','SubMetering2','SubMetering3')
         colnames(household.power.consumption)<-cols
-        household.power.consumption$DateTime<-as.POSIXlt(dmy(household.power.consumption$Date)+hms(household.power.consumption$Time))
+        household.power.consumption$DateTime<-dmy(household.power.consumption$Date)+hms(household.power.consumption$Time)
         household.power.consumption<-household.power.consumption[,c(10,3:9)]
         
         # write the cleaned dataset to a table on the disk
@@ -33,11 +33,6 @@ if (!file.exists('PA Source Data/household_power_consumption.txt')) {
 } else {
         
         household.power.consumption<-read.table('PA Source Data/household_power_consumption.txt',header=TRUE,sep='|')
-##        household.power.consumption$DateTime<-as.POSIXlt(household.power.consumption$DateTime)
+       household.power.consumption$DateTime<-as.POSIXlt(household.power.consumption$DateTime)
         
 }
-
-# remove the large raw data set 
-#if (file.exists('PA Source Data/household_household_power_consumption.txt')) {
-#        x<-file.remove('PA Source Data/household_household_power_consumption.txt')
-#}
